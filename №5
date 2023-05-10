@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Get the directory path as a command line argument
+dir_path=$1
+
+# Check if the directory path is provided
+if [ -z "$dir_path" ]
+then
+    echo "Please provide the directory path as an argument."
+    exit 1
+fi
+
+# Check if the directory exists
+if [ ! -d "$dir_path" ]
+then
+    echo "The specified directory does not exist."
+    exit 1
+fi
+
+# Output the list of files and directories
+echo "The files and directories in $dir_path are:"
+ls -alh "$dir_path"
